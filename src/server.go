@@ -6,6 +6,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/zyhcool/go-demo/morestrings"
+	"github.com/zyhcool/go-demo/sayhello"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -13,6 +14,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(r.Form)
 	w.Write([]byte("hello this is / response"))
 	fmt.Println(morestrings.ReverseRunes("hello"))
+	sayhello.SayIt()
 }
 
 func handlertest(w http.ResponseWriter, r *http.Request) {
