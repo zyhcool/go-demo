@@ -12,5 +12,5 @@ import (
 func main() {
 	fmt.Println(morestrings.ReverseRunes("!oG ,olleH"))
 	fmt.Println(cmp.Diff("Hello World", "Hello Go"))
-	sayhello.SayIt()
+	sayhello.SayIt("hello.go")
 }

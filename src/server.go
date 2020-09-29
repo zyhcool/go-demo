@@ -6,7 +6,6 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/zyhcool/go-demo/morestrings"
-	"github.com/zyhcool/go-demo/sayhello"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -14,7 +13,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(r.Form)
 	w.Write([]byte("hello this is / response"))
 	fmt.Println(morestrings.ReverseRunes("hello"))
-	sayhello.SayIt()
 }
 
 func handlertest(w http.ResponseWriter, r *http.Request) {
@@ -31,6 +29,6 @@ func main() {
 	r.HandleFunc("/test", handlertest)
 	http.Handle("/", r)
 	if err := http.ListenAndServe(":3000", nil); err != nil {
-		fmt.Println("server start at 3000")
+		fmt.Println(err)
 	}
 }
